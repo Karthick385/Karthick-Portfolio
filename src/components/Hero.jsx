@@ -7,11 +7,11 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden bg-dark text-white"
+      className="relative min-h-screen overflow-x-hidden bg-dark text-white"
     >
       {/* ================= Background Effects ================= */}
 
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/20 blur-[130px] rounded-full"></div>
 
         <div className="absolute bottom-20 left-10 w-72 h-72 bg-cyan-500/10 blur-[120px] rounded-full"></div>
@@ -19,8 +19,17 @@ function Hero() {
 
       {/* ================= Main Container ================= */}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 min-h-screen flex items-center justify-center">
-
+      <div
+        className="
+          relative z-10
+          max-w-7xl mx-auto
+          px-6 lg:px-10
+          min-h-screen
+          flex items-start justify-center
+          pt-24 md:pt-28 lg:pt-24
+          pb-16
+        "
+      >
         {/* ================= CENTER CONTENT ================= */}
 
         <motion.div
@@ -29,7 +38,6 @@ function Hero() {
           transition={{ duration: 0.8 }}
           className="w-full max-w-4xl text-center flex flex-col items-center"
         >
-
           {/* Greeting */}
 
           <p className="text-secondary text-lg font-medium mb-5">
@@ -38,9 +46,19 @@ function Hero() {
 
           {/* Name */}
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold leading-tight">
+          <h1
+            className="
+              text-5xl
+              md:text-6xl
+              lg:text-7xl
+              font-heading
+              font-extrabold
+              leading-tight
+            "
+          >
             Karthick
             <br />
+
             <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent">
               Narayanan
             </span>
@@ -48,7 +66,7 @@ function Hero() {
 
           {/* Typing Animation */}
 
-          <div className="mt-6 text-2xl md:text-3xl font-semibold text-gray-300 h-12">
+          <div className="mt-4 text-2xl md:text-3xl font-semibold text-gray-300 h-12">
             <TypeAnimation
               sequence={[
                 "MERN Stack Developer",
@@ -68,25 +86,13 @@ function Hero() {
 
           {/* Description */}
 
-          <p className="mt-8 text-gray-400 leading-8 text-lg max-w-2xl">
+          <p className="mt-6 text-gray-400 leading-8 text-lg max-w-2xl">
             Passionate about building scalable, responsive and user-friendly
             web applications using{" "}
-            <span className="text-white font-semibold">
-              React
-            </span>
-            ,{" "}
-            <span className="text-white font-semibold">
-              Node.js
-            </span>
-            ,{" "}
-            <span className="text-white font-semibold">
-              Express.js
-            </span>{" "}
-            and{" "}
-            <span className="text-white font-semibold">
-              MongoDB
-            </span>
-            .
+            <span className="text-white font-semibold">React</span>,{" "}
+            <span className="text-white font-semibold">Node.js</span>,{" "}
+            <span className="text-white font-semibold">Express.js</span> and{" "}
+            <span className="text-white font-semibold">MongoDB</span>.
           </p>
 
           {/* Open To Work */}
@@ -102,22 +108,24 @@ function Hero() {
           {/* Buttons */}
 
           <div className="mt-10 flex flex-wrap justify-center gap-5">
+            {/* Explore Projects */}
 
             <a
-  href="#projects"
-  className="
-    px-8
-    py-4
-    rounded-xl
-    bg-primary
-    hover:bg-blue-700
-    transition-all
-    duration-300
-    font-semibold
-  "
->
-  Explore Projects
-</a>
+              href="#projects"
+              className="
+                px-8 py-4
+                rounded-xl
+                bg-primary
+                hover:bg-blue-700
+                transition-all
+                duration-300
+                font-semibold
+              "
+            >
+              Explore Projects
+            </a>
+
+            {/* View Resume */}
 
             <a
               href="/Karthick_Resume.pdf"
@@ -136,40 +144,45 @@ function Hero() {
             >
               View Resume
             </a>
-
           </div>
 
           {/* Social Icons */}
 
           <div className="flex items-center justify-center gap-6 mt-10 text-3xl">
+            {/* GitHub */}
 
             <a
               href="https://github.com/Karthick385"
               target="_blank"
               rel="noreferrer"
+              aria-label="GitHub"
               className="hover:text-secondary transition duration-300 hover:scale-110"
             >
               <FaGithub />
             </a>
 
+            {/* LinkedIn */}
+
             <a
               href="https://www.linkedin.com/in/karthick-narayanan-113237324?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
               target="_blank"
               rel="noreferrer"
+              aria-label="LinkedIn"
               className="hover:text-secondary transition duration-300 hover:scale-110"
             >
               <FaLinkedin />
             </a>
 
+            {/* Email */}
+
             <a
               href="mailto:karthicknarayanan385@gmail.com"
+              aria-label="Email"
               className="hover:text-secondary transition duration-300 hover:scale-110"
             >
               <MdEmail />
             </a>
-
           </div>
-
         </motion.div>
       </div>
 
@@ -188,11 +201,7 @@ function Hero() {
         }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center"
       >
-        {/* <p className="text-gray-400 text-sm">
-          Scroll Down
-        </p> */}
-
-        {/* <div className="mt-3 w-[2px] h-12 bg-secondary rounded-full"></div> */}
+        {/* Scroll indicator intentionally hidden */}
       </motion.div>
     </section>
   );
